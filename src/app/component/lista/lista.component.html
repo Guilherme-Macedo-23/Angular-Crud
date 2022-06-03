@@ -1,0 +1,31 @@
+<p-toast></p-toast>
+
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+            (click)="openCreateModal()"></button>
+  </ng-template>
+</p-toolbar>
+
+<!--Table-->
+<p-table [value]="dados" [(selection)]="selectDados" selectionMode="single" (onRowSelect)="onRowSelect($event)">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-dados>
+    <tr [pSelectableRow]="dados">
+      <td>{{dados.name}}</td>
+      <td>{{dados.capital}}</td>
+      <td>
+        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+                (click)="openEditModal(dados)"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
+                (click)="delete(dados)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

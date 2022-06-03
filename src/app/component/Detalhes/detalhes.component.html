@@ -1,0 +1,12 @@
+<p-panel>
+  <p-header>
+    Detalhes
+  </p-header>
+  <div class="p-d-flex" *ngIf="dados">
+    <div class="p-m-4">Nome: {{dados.name}}</div>
+    <div class="p-m-4">Telefone: {{dados.telefone}}</div>
+  </div>
+  <p-footer>
+    <a [routerLink]="goBackUrl">Go back</a>
+  </p-footer>
+</p-panel>
